@@ -13,6 +13,10 @@ This respository is a  TALL Stach( Tailwind, AlpineJs, Livewire and Laravel ) we
 
 No need to set up basic code for every admin panel having TALL Stack for your web application.
 
+You have just need to follow this steps to replace some content to yours one,
+1. Application logo: Replace `logo.svg` with yours
+2. favicon: Replace `favicon.svg` with yours
+
 ## Demo that how admin panel looks,
 ![Clip](./public/demo.gif)
 
