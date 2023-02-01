@@ -17,7 +17,8 @@
     <div class="fixed bottom-0 py-2 bg-white h-14 w-[200px]" x-data="{
         open: false
     }">
-        <div x-show="open" class="fixed w-[185px] mx-2 mb-4 divide-y rounded shadow divide-primary-700 bg-primary bottom-14">
+        <div x-show="open"
+            class="fixed w-[185px] mx-2 mb-4 divide-y rounded shadow divide-primary-700 bg-primary bottom-14">
             <ul class="py-1 text-sm text-gray-700 dark:text-gray-200">
                 <li>
                     <a href="{{ route('profile.show') }}"
@@ -36,10 +37,10 @@
         </div>
 
         <div class="flex px-6 space-x-4  w-[195px]" @click="open = !open">
-            @if (empty(auth()->user()->getProfileUrl(auth()->user()->profile_photo_path)
-                ))
-                <div class="w-10 h-10 p-2 text-center text-white rounded-full bg-primary"></div>
-                <span>{{ auth()->user()->getShortName() }}</span>
+            @if (auth()->user()->getProfileUrl(auth()->user()->profile_photo_path) == null)
+                <div class="w-10 h-10 p-2 text-center text-white rounded-full bg-primary">
+                    <span>{{ auth()->user()->getShortName() }}</span>
+                </div>
             @else
                 <img class="w-10 h-10 text-center rounded-full"
                     src="{{ auth()->user()->getProfileUrl(auth()->user()->profile_photo_path) }}" />
