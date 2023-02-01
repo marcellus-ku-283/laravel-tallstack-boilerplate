@@ -13,7 +13,8 @@ This respository is a  TALL Stach( Tailwind, AlpineJs, Livewire and Laravel ) we
 
 No need to set up basic code for every admin panel having TALL Stack for your web application.
 
-## About Laravel
+## Demo that how admin panel looks,
+![Clip](./public/demo.gif)
 
 
 ## License
