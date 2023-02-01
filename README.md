@@ -19,8 +19,8 @@ You have just need to follow this steps to replace some content to yours one,
 3. Set up mail configuration to test reset password flow
 4. Link storage to public folder for user avatar.
 
-## Demo that how admin panel looks
-![Clip](./public/demo.gif)
+## Demo
+![Demo](./public/demo.gif)
 
 
 ## License
