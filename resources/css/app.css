@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.alter-bg dl:nth-child(even) {
+    @apply bg-primary-100;
+}
