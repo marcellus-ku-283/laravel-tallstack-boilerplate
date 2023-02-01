@@ -20,7 +20,7 @@ You have just need to follow this steps to replace some content to yours one,
 4. Link storage to public folder for user avatar.
 
 ## Demo
-![Demo](./public/demo.gif)
+![Demo](./public/sample.gif)
 
 
 ## License
