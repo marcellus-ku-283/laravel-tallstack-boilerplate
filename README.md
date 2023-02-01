@@ -16,8 +16,10 @@ No need to set up basic code for every admin panel having TALL Stack for your we
 You have just need to follow this steps to replace some content to yours one,
 1. Application logo: Replace `logo.svg` with yours
 2. favicon: Replace `favicon.svg` with yours
+3. Set up mail configuration to test reset password flow
+4. Link storage to public folder for user avatar.
 
-## Demo that how admin panel looks,
+## Demo that how admin panel looks
 ![Clip](./public/demo.gif)
 
 
