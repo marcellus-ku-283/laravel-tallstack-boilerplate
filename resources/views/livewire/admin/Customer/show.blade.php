@@ -5,7 +5,7 @@
         </h2>
     </div>
 
-    <div class="py-0 mt-4 bg-white divide-y-2 rounded-lg shado">
+    <div class="py-0 mt-4 bg-white divide-y-2 rounded-lg shadow dark:bg-slate-700 dark:text-white">
         <div class="p-4 px-4">
             <span class="text-2xl">Customer Information</span>
         </div>
@@ -21,7 +21,6 @@
     </div>
 
     <div class="float-right pb-8 mt-4">
-        <x-primary-button wire:click="goToEdit">Edit</x-primary-button>
         <x-secondary-button type="button" wire:click="goBack">Back</x-secondary-button>
     </div>
 </div>
