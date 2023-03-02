@@ -11,10 +11,10 @@
     <div class="flex bg-primary">
         <a href="{{ route('dashboard') }}" class="m-auto">
             <div x-show="!openSidebar" class="h-16 py-2">
-                <x-svg.small-logo primaryColor="white" class="h-11" />
+                <x-svg.small-logo primaryColor="black" secondaryColor="white" />
             </div>
-            <div x-show="openSidebar" class="py-4 bg-primary">
-                <x-application-logo class="h-16 w-44 lg:h-10 md:h-8" />
+            <div x-show="openSidebar">
+                <x-application-logo class="h-16 w-44" />
             </div>
         </a>
     </div>
@@ -102,10 +102,10 @@
                 </a>
                 <a @class([
                     'flex items-center p-2 rounded-md justify-center space-x-2',
-                    'bg-primary-500 text-white' => request()->routeIs('profile.show') == true,
+                    'bg-primary-500 text-white' => request()->routeIs('browser-sessions') == true,
                     'hover:bg-primary-500 hover:text-white  text-primary-700' =>
-                        request()->routeIs('profile.show') == false,
-                ]) href="{{ route('profile.show') }}" x-data="{ tooltip: 'Browser Sessions' }"
+                        request()->routeIs('browser-sessions') == false,
+                ]) href="{{ route('browser-sessions') }}" x-data="{ tooltip: 'Browser Sessions' }"
                     x-tooltip="tooltip">
                     <span aria-hidden="true">
                         <x-svg.computer-desktop />
