@@ -54,7 +54,7 @@
         <!-- Firstname -->
         <div class="col-span-6 sm:col-span-4">
             <x-jet-label for="first_name" value="{{ __('Firstname') }}" />
-            <x-jet-input id="first_name" type="text" class="block w-full mt-1" wire:model.defer="state.first_name"
+            <x-jet-input id="first_name" type="text" class="block w-full mt-1 dark:bg-slate-800 dark:text-white" wire:model.defer="state.first_name"
                 autocomplete="first_name" />
             <x-jet-input-error for="first_name" class="mt-2" />
         </div>
@@ -62,7 +62,7 @@
         <!-- Lastname -->
         <div class="col-span-6 sm:col-span-4">
             <x-jet-label for="last_name" value="{{ __('Lastname') }}" />
-            <x-jet-input id="last_name" type="text" class="block w-full mt-1" wire:model.defer="state.last_name"
+            <x-jet-input id="last_name" type="text" class="block w-full mt-1 dark:bg-slate-800 dark:text-white" wire:model.defer="state.last_name"
                 autocomplete="last_name" />
             <x-jet-input-error for="last_name" class="mt-2" />
         </div>
@@ -70,7 +70,7 @@
         <!-- Email -->
         <div class="col-span-6 sm:col-span-4">
             <x-jet-label for="email" value="{{ __('Email') }}" />
-            <x-jet-input id="email" type="email" class="block w-full mt-1" wire:model.defer="state.email" />
+            <x-jet-input id="email" type="email" class="block w-full mt-1 dark:bg-slate-800 dark:text-white" wire:model.defer="state.email" />
             <x-jet-input-error for="email" class="mt-2" />
 
             @if (Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::emailVerification()) &&
