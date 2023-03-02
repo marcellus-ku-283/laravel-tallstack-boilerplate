@@ -10,7 +10,7 @@
     }">
     <div class="flex bg-primary dark:bg-slate-800">
         <a href="{{ route('dashboard') }}" class="m-auto">
-            <div x-show="!openSidebar" class="h-16 py-2">
+            <div x-show="!openSidebar" class="flex items-center justify-center h-16 py-4">
                 <x-svg.small-logo primaryColor="black" secondaryColor="white" />
             </div>
             <div x-show="openSidebar">
