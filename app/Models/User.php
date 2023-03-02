@@ -2,26 +2,24 @@
 
 namespace App\Models;
 
+use App\Traits\FilterTrait;
 use Laravel\Sanctum\HasApiTokens;
 use Laravel\Jetstream\HasProfilePhoto;
-use Spatie\Permission\Traits\HasRoles;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Notifications\Notifiable;
-use App\Notifications\VerifyMailNotification;
 use Laravel\Fortify\TwoFactorAuthenticatable;
-use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Support\Facades\Storage;
 
 class User extends Authenticatable implements MustVerifyEmail
 {
     use HasFactory;
     use Notifiable;
-    use SoftDeletes;
     use HasApiTokens;
     use HasProfilePhoto;
     use TwoFactorAuthenticatable;
+    use FilterTrait;
 
     public $primaryKey = 'id';
     /**
@@ -31,12 +29,17 @@ class User extends Authenticatable implements MustVerifyEmail
      */
     protected $fillable = [
         'id',
-        'name',
+        'momentum_id',
+        'momentum_user_key',
+        'first_name',
+        'last_name',
         'email',
+        'phone',
+        'pin',
+        'balance',
+        'block',
         'status',
         'password',
-        'social_id',
-        'social_type',
         'deleted_at'
     ];
 
@@ -61,11 +64,12 @@ class User extends Authenticatable implements MustVerifyEmail
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'block' => 'bool'
     ];
 
     public function getShortName()
     {
-        $name = $this->name;
+        $name = $this->first_name;
         $nameArr = explode(' ', $name);
         $result = '';
         foreach ($nameArr as $word) {
@@ -93,13 +97,30 @@ class User extends Authenticatable implements MustVerifyEmail
 
     public function scopeSearch($query, $search)
     {
-        return $query->where('name', "LIKE", "%$search%")
+        return $query->where('first_name', "LIKE", "%$search%")
+            ->where('last_name', "LIKE", "%$search%")
             ->orWhere('email', "LIKE", "%$search%");
+    }
+
+    public function scopeCustomerUsers($query)
+    {
+        return $query->whereRole('client');
+    }
+
+    public function securityAnswer()
+    {
+        return $this->hasOne(UserSecurityQuestionAnswer::class);
+    }
+
+    public function loans()
+    {
+        return $this->hasMany(UserLoan::class);
     }
 
     public static function boot()
     {
         parent::boot();
+
 
         static::creating(function ($user) {
             $user->created_by = auth()->id() ?? null;

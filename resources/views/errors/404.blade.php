@@ -41,13 +41,13 @@
             <div class="w-1/2 min-h-screen col-span-1 bg-white text-primary-300">
                 <x-jet-authentication-card>
                     <x-slot name="logo"></x-slot>
-                    <div class="max-w-md text-center space-y-4">
+                    <div class="max-w-md space-y-4 text-center">
                         <h2 class="mb-8 font-extrabold text-9xl dark:text-gray-600">
                             <span class="sr-only">Error</span>404
                         </h2>
                         <p class="text-2xl font-semibold md:text-3xl">Sorry, we couldn't find this page.</p>
                         <a rel="noopener noreferrer" href="{{ route('login') }}"
-                            class="inline-flex items-center px-4 py-2 bg-primary-800 border border-transparent rounded-md font-semibold text-xs text-primary-300  uppercase tracking-widest hover:bg-primary-700 active:bg-primary-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25 transition">Go back</a>
+                            class="inline-flex items-center px-4 py-2 text-xs font-semibold tracking-widest uppercase transition border border-transparent rounded-md bg-primary-800 text-primary-300 hover:bg-primary-700 active:bg-primary-900 focus:outline-none focus:border-gray-900 focus:ring focus:ring-gray-300 disabled:opacity-25">Go back</a>
                     </div>
                 </x-jet-authentication-card>
             </div>

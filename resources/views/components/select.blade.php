@@ -1,4 +1,4 @@
-@props(['label', 'inputAttrs', 'key', 'defer' => false, 'disabled' => false])
+@props(['label', 'inputAttrs', 'key', 'defer' => 'false', 'disabled' => false])
 
 <div class="space-y-2">
     <x-jet-label for="{{ $label }}">{{ str()->ucfirst($label) }}</x-jet-label>
@@ -7,7 +7,16 @@
         <select {{ $disabled ? 'disabled' : '' }} {!! $attributes->merge([
             'class' =>
                 'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5',
-        ]) !!} wire:model.defer='{{ $key }}' id="{{ $key }}" name="{{ $key }}" >
+        ]) !!} wire:model.defer='{{ $key }}'
+            id="{{ $key }}" name="{{ $key }}">
+            {{ $slot }}
+        </select>
+        @else
+        <select {{ $disabled ? 'disabled' : '' }} {!! $attributes->merge([
+            'class' =>
+                'bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5',
+        ]) !!} wire:model='{{ $key }}'
+            id="{{ $key }}" name="{{ $key }}">
             {{ $slot }}
         </select>
     @endif
