@@ -29,15 +29,9 @@ class User extends Authenticatable implements MustVerifyEmail
      */
     protected $fillable = [
         'id',
-        'momentum_id',
-        'momentum_user_key',
         'first_name',
         'last_name',
         'email',
-        'phone',
-        'pin',
-        'balance',
-        'block',
         'status',
         'password',
         'deleted_at'
