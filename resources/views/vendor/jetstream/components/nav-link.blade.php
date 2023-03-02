@@ -7,8 +7,8 @@
 
 <a @class([
     'flex items-center p-2 rounded-md justify-start space-x-2',
-    'bg-primary-500 text-white' => $active == true,
-    'hover:bg-primary-500 hover:text-white  text-primary-700' => $active == false,
+    'bg-primary-500 text-white dark:bg-slate-800 dark:text-white' => $active == true,
+    'hover:bg-primary-500 hover:text-white  text-primary-700 dark:text-white hover:dark:bg-slate-800 hover:dark:text-white' => $active == false,
 ]) {{ $attributes->except(['class']) }}>
     <span aria-hidden="true">
         <svg @class(['h-5 w-5']) xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"

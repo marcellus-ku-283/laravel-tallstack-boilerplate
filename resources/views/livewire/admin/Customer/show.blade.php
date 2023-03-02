@@ -5,7 +5,7 @@
         </h2>
     </div>
 
-    <div class="py-0 mt-4 bg-white divide-y-2 rounded-lg shadow">
+    <div class="py-0 mt-4 bg-white divide-y-2 rounded-lg shado">
         <div class="p-4 px-4">
             <span class="text-2xl">Customer Information</span>
         </div>

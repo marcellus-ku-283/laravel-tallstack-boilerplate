@@ -1,4 +1,4 @@
-<div class="sticky hidden bg-white dark:border-primary-darker dark:bg-darker md:block" x-data="{
+<div class="sticky hidden bg-white dark:bg-slate-700 dark:h-screen md:block" x-data="{
     openSidebar: localStorage.getItem('openSidebar') == 'true' ? true : false,
     init() {
         console.log(this.openSidebar)
@@ -8,7 +8,7 @@
         'sidebar-open': openSidebar == true,
         'sidebar-close': openSidebar == false,
     }">
-    <div class="flex bg-primary">
+    <div class="flex bg-primary dark:bg-slate-800">
         <a href="{{ route('dashboard') }}" class="m-auto">
             <div x-show="!openSidebar" class="h-16 py-2">
                 <x-svg.small-logo primaryColor="black" secondaryColor="white" />
@@ -27,9 +27,9 @@
                             @foreach($menu['childs'] as $key => $subMenu)
                                 <a @class([
                                 'flex items-center p-2 rounded-md justify-center space-x-2',
-                                'bg-primary-500 text-white' =>
+                                'bg-primary-500 text-white dark:bg-slate-800 dark:text-white' =>
                                     request()->routeIs($subMenu['routeName']) == true,
-                                'hover:bg-primary-500 hover:text-white  text-primary-700' =>
+                                'hover:dark:bg-slate-700 hover:bg-primary-500 hover:text-white  text-primary-700' =>
                                     request()->routeIs($subMenu['routeName']) == false,
                             ]) href="{{ route($subMenu['routeName']) }}"
                                 x-data="{ tooltip: '{{ $subMenu['label'] }}' }" x-tooltip="tooltip">
@@ -45,10 +45,10 @@
                         @else
                             <a @class([
                                 'flex items-center p-2 rounded-md justify-center space-x-2',
-                                'bg-primary-500 text-white' =>
+                                'bg-primary-500 text-white dark:bg-slate-800 dark:text-white' =>
                                     request()->routeIs($menu['routeName']) ||
                                     request()->routeIs($menu['genericRouteKey'] . '.*') == true,
-                                'hover:bg-primary-500 hover:text-white  text-primary-700' =>
+                                'dark:text-white hover:dark:bg-slate-800 hover:bg-primary-500 hover:text-white text-primary-700 dark:hover:' =>
                                     request()->routeIs($menu['routeName']) ||
                                     request()->routeIs($menu['genericRouteKey'] . '.*') == false,
                             ]) href="{{ route($menu['routeName']) }}"
@@ -68,8 +68,8 @@
             <div class="py-2 space-y-2">
                 <a @class([
                     'flex items-center p-2 rounded-md justify-center space-x-2',
-                    'bg-primary-500 text-white' => request()->routeIs('profile.show') == true,
-                    'hover:bg-primary-500 hover:text-white  text-primary-700' =>
+                    'dark:bg-slate-800 hover:dark:text-white dark:text-white bg-primary-500 text-white' => request()->routeIs('profile.show') == true,
+                    'hover:dark:bg-slate-800 dark:text-white hover:bg-primary-500 hover:text-white  text-primary-700' =>
                         request()->routeIs('profile.show') == false,
                 ]) href="{{ route('profile.show') }}" x-data="{ tooltip: 'Profile' }"
                     x-tooltip="tooltip">
@@ -79,9 +79,9 @@
                 </a>
                 <a @class([
                     'flex items-center p-2 rounded-md justify-center space-x-2',
-                    'bg-primary-500 text-white' =>
+                    'dark:bg-slate-800 hover:dark:text-white dark:text-white bg-primary-500 text-white' =>
                         request()->routeIs('change-password') == true,
-                    'hover:bg-primary-500 hover:text-white  text-primary-700' =>
+                    'hover:dark:bg-slate-800 dark:text-white hover:bg-primary-500 hover:text-white  text-primary-700' =>
                         request()->routeIs('change-password') == false,
                 ]) href="{{ route('change-password') }}" x-data="{ tooltip: 'Change Password' }"
                     x-tooltip="tooltip">
@@ -91,8 +91,8 @@
                 </a>
                 <a @class([
                     'flex items-center p-2 rounded-md justify-center space-x-2',
-                    'bg-primary-500 text-white' => request()->routeIs('2-factor-auth') == true,
-                    'hover:bg-primary-500 hover:text-white  text-primary-700' =>
+                    'dark:bg-slate-800 hover:dark:text-white dark:text-white bg-primary-500 text-white' => request()->routeIs('2-factor-auth') == true,
+                    'hover:dark:bg-slate-800 dark:text-white hover:bg-primary-500 hover:text-white  text-primary-700' =>
                         request()->routeIs('2-factor-auth') == false,
                 ]) href="{{ route('2-factor-auth') }}" x-data="{ tooltip: '2 Factor Authentication' }"
                     x-tooltip="tooltip">
@@ -102,8 +102,8 @@
                 </a>
                 <a @class([
                     'flex items-center p-2 rounded-md justify-center space-x-2',
-                    'bg-primary-500 text-white' => request()->routeIs('browser-sessions') == true,
-                    'hover:bg-primary-500 hover:text-white  text-primary-700' =>
+                    'dark:bg-slate-800 hover:dark:text-white dark:text-white bg-primary-500 text-white' => request()->routeIs('browser-sessions') == true,
+                    'hover:dark:bg-slate-800 dark:text-white hover:bg-primary-500 hover:text-white  text-primary-700' =>
                         request()->routeIs('browser-sessions') == false,
                 ]) href="{{ route('browser-sessions') }}" x-data="{ tooltip: 'Browser Sessions' }"
                     x-tooltip="tooltip">
@@ -111,7 +111,7 @@
                         <x-svg.computer-desktop />
                     </span>
                 </a>
-                <a class="flex items-center justify-center p-2 space-x-2 rounded-md text-primary-700 hover:bg-primary hover:text-white"
+                <a class="flex items-center justify-center p-2 space-x-2 rounded-md text-primary-700 hover:bg-primary hover:text-white dark:text-white hover:dark:bg-slate-800 hover:dark:text-white"
                     href="{{ route('logout') }}"
                     onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
                     x-data="{ tooltip: 'Sign out' }" x-tooltip="tooltip">
@@ -125,7 +125,7 @@
             </div>
             <div class="py-2 space-y-2">
                 <div @class([
-                    'flex m-auto items-center p-2 rounded-md justify-center space-x-2 text-white hover:bg-primary hover:text-white text-primary-700',
+                    'flex m-auto items-center p-2 rounded-md justify-center space-x-2 text-white hover:bg-primary hover:text-white text-primary-700 dark:text-white hover:dark:bg-slate-800 hover:dark:text-white',
                 ]) x-data="{ tooltip: 'Slide right' }" x-tooltip="tooltip"
                     @click="openSidebar = !openSidebar; localStorage.setItem('openSidebar', true);">
                     <span aria-hidden="true">
@@ -173,7 +173,7 @@
                 <div x-data="{
                     open: '{{ $open }}',
                 }" class="space-y-2">
-                    <div class="flex items-center justify-between p-2 space-x-2 bg-white rounded-md text-primary-700 hover:text-white hover:bg-primary"
+                    <div class="flex items-center justify-between p-2 space-x-2 bg-white rounded-md text-primary-700 hover:text-white hover:bg-primary dark:text-white dark:bg-slate-800 hover:dark:text-white hover:dark:bg-slate-800"
                         @click="open = !open">
                         <div class="flex items-start space-x-2">
                             <x-svg.profile />
@@ -188,35 +188,35 @@
                     <div x-show="open">
                         <div class="space-y-2">
                             <a @class([
-                                'block p-2 text-sm transition-colors duration-200 rounded-md hover:bg-primary hover:text-white mt-2 ml-8 space-y-2',
-                                'bg-primary text-white' => request()->routeIs('profile.show') == true,
-                                'hover:bg-primary-500 hover:text-white  text-primary-700' =>
+                                'block p-2 text-sm transition-colors duration-200 rounded-md mt-2 ml-8 space-y-2',
+                                'dark:bg-slate-800 hover:dark:bg-slate-800 dark:text-white bg-primary text-white hover:bg-primary hover:text-white' => request()->routeIs('profile.show') == true,
+                                'hover hover:dark:bg-slate-800 dark:text-white hover:bg-primary-500 hover:text-white text-primary-700' =>
                                     request()->routeIs('profile.show') == false,
                             ]) href="{{ route('profile.show') }}">
                                 <span>{{ __('Profile') }}</span>
                             </a>
                             <a @class([
-                                'block p-2 text-sm transition-colors duration-200 rounded-md hover:bg-primary hover:text-white mt-2 ml-8 space-y-2',
-                                'bg-primary text-white' =>
+                                'block p-2 text-sm transition-colors duration-200 rounded-md mt-2 ml-8 space-y-2',
+                                'dark:bg-slate-800 hover:dark:bg-slate-800 dark:text-white bg-primary text-white hover:bg-primary hover:text-white' =>
                                     request()->routeIs('change-password') == true,
-                                'hover:bg-primary-500 hover:text-white  text-primary-700' =>
+                                'hover hover:dark:bg-slate-800 dark:text-white hover:bg-primary-500 hover:text-white text-primary-700' =>
                                     request()->routeIs('change-password') == false,
                             ]) href="{{ route('change-password') }}">
                                 <span>{{ __('Change Password') }}</span>
                             </a>
                             <a @class([
-                                'block p-2 text-sm transition-colors duration-200 rounded-md hover:bg-primary hover:text-white mt-2 ml-8 space-y-2',
-                                'bg-primary text-white' => request()->routeIs('2-factor-auth') == true,
-                                'hover:bg-primary-500 hover:text-white  text-primary-700' =>
+                                'block p-2 text-sm transition-colors duration-200 rounded-md mt-2 ml-8 space-y-2',
+                                'dark:bg-slate-800 hover:dark:bg-slate-800 dark:text-white bg-primary text-white hover:bg-primary hover:text-white' => request()->routeIs('2-factor-auth') == true,
+                                'hover hover:dark:bg-slate-800 dark:text-white hover:bg-primary-500 hover:text-white text-primary-700' =>
                                     request()->routeIs('2-factor-auth') == false,
                             ]) href="{{ route('2-factor-auth') }}">
                                 <span>{{ __('2 Factor Authentication') }}</span>
                             </a>
                             <a @class([
-                                'block p-2 text-sm transition-colors duration-200 rounded-md hover:bg-primary hover:text-white mt-2 ml-8 space-y-2',
-                                'bg-primary text-white' =>
+                                'block p-2 text-sm transition-colors duration-200 rounded-md mt-2 ml-8 space-y-2',
+                                'dark:bg-slate-800 hover:dark:bg-slate-800 dark:text-white bg-primary text-white hover:bg-primary hover:text-white' =>
                                     request()->routeIs('browser-sessions') == true,
-                                'hover:bg-primary-500 hover:text-white  text-primary-700' =>
+                                'hover hover:dark:bg-slate-800 dark:text-white hover:bg-primary-500 hover:text-white text-primary-700' =>
                                     request()->routeIs('browser-sessions') == false,
                             ]) href="{{ route('browser-sessions') }}">
                                 <span>{{ __('Browser Sessions') }}</span>
@@ -224,7 +224,7 @@
                         </div>
                     </div>
                 </div>
-                <a class="flex items-center justify-start p-2 space-x-2 rounded-md hover:bg-primary-500 hover:text-white text-primary-700"href="{{ route('logout') }}"
+                <a class="flex items-center justify-start p-2 space-x-2 rounded-md hover:bg-primary-500 hover:text-white text-primary-700 dark:text-white hover:dark:text-white hover:dark:bg-slate-800" href="{{ route('logout') }}"
                     onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                     <span aria-hidden="true">
                         <x-svg.logout />
@@ -237,7 +237,7 @@
             </div>
             <div class="py-2 space-y-2">
                 <div @click="openSidebar = !openSidebar; localStorage.setItem('openSidebar', false)"
-                    class="flex items-center justify-start p-2 space-x-2 rounded-md hover:bg-primary-500 hover:text-white text-primary-700 hover:cursor-pointer">
+                    class="flex items-center justify-start p-2 space-x-2 rounded-md hover:bg-primary-500 hover:text-white text-primary-700 hover:cursor-pointer dark:text-white hover:dark:text-white hover:dark:bg-slate-800">
                     <span aria-hidden="true">
                         <x-svg.arrow-left-on-rectangle />
                     </span>

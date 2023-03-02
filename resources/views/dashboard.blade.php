@@ -6,7 +6,7 @@
     </x-slot>
 
     <div class="flex items-center justify-between">
-        <h2 class="text-xl font-semibold leading-tight text-gray-800">
+        <h2 class="text-xl font-semibold leading-tight text-gray-800 dark:text-white">
             {{ __('Dashboard') }}
         </h2>
     </div>

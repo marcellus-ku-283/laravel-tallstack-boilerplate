@@ -38,12 +38,12 @@
                         </x-table.cell>
                         <x-table.cell>
                             <a href="{{ route('customer.show', $user->id) }}"
-                                class="inline-flex text-sm font-semibold tracking-widest uppercase transition duration-150 ease-in-out border border-transparent rounded-md items-centerpy-2 text-primary"
+                                class="inline-flex text-sm font-semibold tracking-widest uppercase transition duration-150 ease-in-out border border-transparent rounded-md items-centerpy-2 text-primary dark:text-white"
                                 x-data="{ tooltip: 'View user' }" x-tooltip="tooltip">
                                 <x-svg.eye />
                             </a>
                             <button type="button" wire:click="confirmDelete({{ $user->id }})"
-                                class="inline-flex text-sm font-semibold tracking-widest uppercase transition duration-150 ease-in-out border border-transparent rounded-md items-centerpy-2 text-primary"
+                                class="inline-flex text-sm font-semibold tracking-widest uppercase transition duration-150 ease-in-out border border-transparent rounded-md items-centerpy-2 text-primary dark:text-white"
                                 x-data="{ tooltip: 'Delete user' }" x-tooltip="tooltip">
                                 <x-svg.trash/>
                             </button>
@@ -65,11 +65,11 @@
 
     <x-jet-dialog-modal wire:model="dialogModel">
         <x-slot name="title">
-            {{ __('Confirmation') }}
+            <span class="dark:text-white">{{ __('Confirmation') }}</span>
         </x-slot>
 
         <x-slot name="content">
-            {{ __('Are you sure want to remove this item?') }}
+            <span class="dark:text-white">{{ __('Are you sure want to remove this item?') }}</span>
         </x-slot>
 
         <x-slot name="footer">

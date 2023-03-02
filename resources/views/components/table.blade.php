@@ -19,7 +19,7 @@
                         x-transition:leave-start="opacity-100 transform scale-x-0 -translate-x-1/2"
                         x-transition:leave-end="opacity-0 transform scale-x-100 translate-x-0">
                         <div @class([
-                            'p-4 mt-4 bg-white rounded-lg' => $isSearch || $hasFilters,
+                            'p-4 mt-4 bg-white rounded-lg dark:bg-slate-700' => $isSearch || $hasFilters,
                         ])>
                             <div class="flex items-start justify-between space-x-4">
                                 @if ($isSearch)

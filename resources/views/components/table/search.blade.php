@@ -15,7 +15,7 @@
             </svg>
         </div>
         <input wire:model="{{ $wireKey }}" id="search" name="search"
-            class="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-10"
+            class="dark:bg-slate-800 bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 pl-10"
             placeholder="{{ $label }}" type="search">
     </div>
 </div>

@@ -1,6 +1,6 @@
 <x-base-layout>
     <div class="md:flex">
-        <div class="hidden w-1/2 min-h-screen col-span-1 bg-gradient-to-r from-primary-700 to-primary-300 md:block">
+        <div class="hidden w-1/2 min-h-screen col-span-1 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-slate-200 to-slate-500 md:block">
             <div class="flex items-center justify-center h-screen">
                 <a href="{{ route('login') }}">
                     <x-application-logo class="h-40 sm:h-20"></x-application-logo>
