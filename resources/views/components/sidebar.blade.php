@@ -1,8 +1,5 @@
 <div class="sticky hidden bg-white dark:bg-slate-700 dark:h-screen md:block" x-data="{
     openSidebar: localStorage.getItem('openSidebar') == 'true' ? true : false,
-    init() {
-        console.log(this.openSidebar)
-    }
 }"
     :class="{
         'sidebar-open': openSidebar == true,
