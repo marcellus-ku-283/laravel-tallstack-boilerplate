@@ -51,6 +51,10 @@ class User extends Authenticatable implements MustVerifyEmail
         'displayStatus'
     ];
 
+    protected $exactFilters = [
+        'status'
+    ];
+
     /**
      * The attributes that should be cast.
      *
@@ -93,6 +97,11 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $query->where('name', "LIKE", "%$search%")
             ->orWhere('email', "LIKE", "%$search%");
+    }
+
+    public function scopeStatus($query, $status)
+    {
+        return $query->where('status', $status);
     }
 
     public function scopeCustomerUsers($query)

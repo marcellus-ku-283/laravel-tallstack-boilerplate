@@ -61,7 +61,7 @@
                             @click="open = !open">
                             <div class="flex items-start space-x-2">
                                 <x-svg.profile />
-                                <span>{{ auth()->user()->first_name . ' ' . auth()->user()->last_name }}</span>
+                                <span>{{ auth()->user()->name }}</span>
                             </div>
                             <svg class="w-4 h-4 transition-transform transform" :class="{ 'rotate-180': open }"
                                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"

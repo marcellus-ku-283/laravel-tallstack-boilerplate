@@ -17,6 +17,8 @@ Route::get('/', function () {
     return to_route('login');
 });
 
+Route::get('/developer/login', App\Http\Livewire\Developer\Login::class)->name('developer.login');
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),
@@ -43,3 +45,8 @@ Route::middleware([
         })->name('browser-sessions');
     });
 });
+
+// Route::post('/developer/login', function (Request $request) {
+
+//     return redirect()->to('/telescope');
+// })->name('developer.login.action');

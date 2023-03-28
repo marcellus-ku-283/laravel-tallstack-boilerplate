@@ -32,13 +32,15 @@
                                 </div>
                             @endif
                         </div>
-                        <div x-show="openFilterDrawer" class="flex flex-col justify-between">
+                        <div x-show="openFilterDrawer" class="flex flex-col justify-between py-4 space-y-4">
                             <div class="grid grid-cols-3 gap-4">
-                                {{ $filters ?? '' }}
+                                <div class="w-full">
+                                    {{ $filters ?? '' }}
+                                </div>
                             </div>
                             <div class="grid grid-cols-4 gap-4">
                                 @if (empty($clearFilter))
-                                    <div class="w-full mt-4">
+                                    <div class="w-full">
                                         <button
                                             class="inline-flex items-center px-4 py-2 text-xs font-semibold tracking-widest text-white uppercase transition duration-150 ease-in-out border border-transparent rounded-md bg-primary hover:bg-primary-700 focus:bg-primary-700 active:bg-primary-900 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
                                             type="button" x-on:click="openFilterDrawer = false">Close</button>

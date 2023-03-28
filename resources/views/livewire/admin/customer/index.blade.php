@@ -11,6 +11,17 @@
             <x-table.search :wireKey="'search'" :label="'Search user'" />
         </x-slot>
 
+        <x-slot name="filters">
+            <x-select for="statusFilter" :value="'Status'" wire:model='statusFilter'>
+                <option value>Choose Status</option>
+                @if (!empty($statusFilters))
+                    @foreach ($statusFilters as $statusFilter)
+                        <option value="{{ $statusFilter }}">{{ $statusFilter }}</option>
+                    @endforeach
+                @endif
+            </x-select>
+        </x-slot>
+
         <x-slot name="head">
             <x-table.heading sortable wire:click="sortBy('name')" :direction="$sortField == 'name' ? $sortDirection : null">
                 Name

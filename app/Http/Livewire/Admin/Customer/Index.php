@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Admin\Customer;
 
 use App\Models\User;
+use App\Services\UserService;
 use Livewire\Component;
 
 class Index extends Component
@@ -13,6 +14,12 @@ class Index extends Component
     public $deleteId;
     public $sortField = 'id';
     public $sortDirection = 'desc';
+    public $statusFilter; // Key by which you can run `where` query for filters.
+    public $statusFilters = [ // Values to show on HTML for filters.
+        'active',
+        'inactive'
+    ];
+
     
     public function render()
     {
@@ -28,14 +35,12 @@ class Index extends Component
         $this->getUsers();        
     }
 
-    public function getUsers()
+    public function getUsers($inputs = [])
     {
-        $this->users = new User;
-        $this->users = $this->users->customerUsers();
-        if (!empty($this->search)) {
-            $this->users = $this->users->search($this->search);
-        }
-        $this->users = $this->users->orderBy($this->sortField, $this->sortDirection)->paginate(config('site.pagination.limit'));
+        $this->users = new UserService(new User);
+        $inputs['sort']['by'] = $this->sortField;
+        $inputs['sort']['order'] = $this->sortDirection;
+        $this->users = $this->users->collection($inputs);
     }
 
     public function sortBy($field)
@@ -68,5 +73,14 @@ class Index extends Component
     {
         $user->block = !$user->block;
         $user->save();
+    }
+
+    public function updatedStatusFilter()
+    {
+        $this->getUsers([
+            'filters' => [
+                'status' => $this->statusFilter
+            ]
+        ]);
     }
 }
