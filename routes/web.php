@@ -45,8 +45,3 @@ Route::middleware([
         })->name('browser-sessions');
     });
 });
-
-// Route::post('/developer/login', function (Request $request) {
-
-//     return redirect()->to('/telescope');
-// })->name('developer.login.action');
