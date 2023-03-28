@@ -143,9 +143,9 @@
                             <x-mega-nav-link :menu="$menu" :open="request()->routeIs($menu['genericRouteKey'] . '.*')">
                             </x-mega-nav-link>
                         @else
-                            <x-jet-nav-link href="{{ route($menu['routeName']) }}" :menu="$menu" :active="request()->routeIs($menu['routeName']) ||
+                            <x-nav-link href="{{ route($menu['routeName']) }}" :active="request()->routeIs($menu['routeName']) ||
                                 request()->routeIs($menu['genericRouteKey'] . '.*')">
-                            </x-jet-nav-link>
+                            </x-nav-link>
                         @endif
                     @endforeach
                 @endif
