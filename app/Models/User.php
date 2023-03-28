@@ -99,9 +99,9 @@ class User extends Authenticatable implements MustVerifyEmail
             ->orWhere('email', "LIKE", "%$search%");
     }
 
-    public function scopeStatus($query, $status)
+    public function scopeStatus($query, ...$status)
     {
-        return $query->where('status', $status);
+        return $query->whereIn('status', $status);
     }
 
     public function scopeCustomerUsers($query)

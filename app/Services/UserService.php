@@ -19,7 +19,7 @@ class UserService
         $users = $this->model;
 
         if (!empty($inputs['filters'])) {
-            $users->filter($inputs['filters']);
+            $users = $users->filter($inputs['filters']);
         }
 
         if (!empty($inputs['sort'])) {

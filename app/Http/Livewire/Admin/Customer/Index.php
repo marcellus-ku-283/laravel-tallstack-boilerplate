@@ -3,8 +3,8 @@
 namespace App\Http\Livewire\Admin\Customer;
 
 use App\Models\User;
-use App\Services\UserService;
 use Livewire\Component;
+use App\Services\UserService;
 
 class Index extends Component
 {
@@ -20,10 +20,18 @@ class Index extends Component
         'inactive'
     ];
 
-    
+
     public function render()
     {
-        $this->getUsers();
+        $this->getUsers([
+            'filters' => [
+                'status' => $this->statusFilter ?? []
+            ],
+            'sort' => [
+                'by' => $this->sortField,
+                'order' => $this->sortDirection
+            ]
+        ]);
         return view('livewire.admin.customer.index', [
             'users' => $this->users
         ]);
@@ -32,7 +40,7 @@ class Index extends Component
 
     public function updatedSearch()
     {
-        $this->getUsers();        
+        $this->getUsers();
     }
 
     public function getUsers($inputs = [])
@@ -46,7 +54,7 @@ class Index extends Component
     public function sortBy($field)
     {
         $this->sortDirection = ($field == $this->sortField)
-            ? ($this->sortDirection = $this->sortDirection == 'asc' ? 'desc' : 'asc' ) : 'asc';
+            ? ($this->sortDirection = $this->sortDirection == 'asc' ? 'desc' : 'asc') : 'asc';
         $this->sortField = $field;
     }
 
@@ -65,7 +73,7 @@ class Index extends Component
     public function deleteUser(User $user)
     {
         $user->delete();
-        
+
         $this->closeConfirm();
     }
 
@@ -75,12 +83,10 @@ class Index extends Component
         $user->save();
     }
 
-    public function updatedStatusFilter()
+    public function clearFilters() // This function will clear all filter values from filters.
     {
-        $this->getUsers([
-            'filters' => [
-                'status' => $this->statusFilter
-            ]
+        $this->reset([
+            'statusFilter'
         ]);
     }
 }

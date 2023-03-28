@@ -24,7 +24,7 @@ trait FilterTrait {
             foreach ($exactFilters as $value) {
                 foreach ($filters as $key => $filterVal) {
                     if ($value == $key) {
-                        $builder = $builder->{$value}($filterVal);
+                        $builder = $builder->where($value, $filterVal);
                     }
                 }
             }

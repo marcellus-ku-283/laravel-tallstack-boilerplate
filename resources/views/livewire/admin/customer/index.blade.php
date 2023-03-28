@@ -22,6 +22,12 @@
             </x-select>
         </x-slot>
 
+        <x-slot name="clearFilter">
+            <x-button wire:click="clearFilters">
+                Clear Filters
+            </x-button>
+        </x-slot>
+
         <x-slot name="head">
             <x-table.heading sortable wire:click="sortBy('name')" :direction="$sortField == 'name' ? $sortDirection : null">
                 Name
