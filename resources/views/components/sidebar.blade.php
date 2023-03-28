@@ -123,7 +123,7 @@
             </div>
             <div class="py-2 space-y-2">
                 <div @class([
-                    'flex m-auto items-center p-2 rounded-md justify-center space-x-2 text-white hover:bg-primary hover:text-white text-primary-700',
+                    'flex items-center justify-center p-2 space-x-2 rounded-md hover:bg-primary-500 hover:text-white text-primary-700 hover:cursor-pointer',
                 ]) x-data="{ tooltip: 'Slide right' }" x-tooltip="tooltip"
                     @click="openSidebar = !openSidebar; localStorage.setItem('openSidebar', true);">
                     <span aria-hidden="true">
