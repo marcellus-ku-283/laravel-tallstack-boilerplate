@@ -15,10 +15,10 @@
     display: none !important;
 }
 
-.sidebar-open{
+.sidebar-open {
     @apply w-1/5
 }
 
-.sidebar-close{
+.sidebar-close {
     @apply w-16
 }
