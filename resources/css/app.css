@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.alter-bg dl:nth-child(even) {
+    @apply text-primary-600 bg-primary-100;
+}
+
+.alter-bg dl:nth-child(odd) {
+    @apply text-primary-500 bg-primary-50;
+}
+
+[x-cloak] {
+    display: none !important;
+}
+
+.sidebar-open{
+    @apply w-1/5
+}
+
+.sidebar-close{
+    @apply w-16
+}

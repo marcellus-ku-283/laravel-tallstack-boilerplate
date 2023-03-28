@@ -1,8 +1,5 @@
 <div class="sticky hidden bg-white dark:border-primary-darker dark:bg-darker md:block" x-data="{
     openSidebar: localStorage.getItem('openSidebar') == 'true' ? true : false,
-    init() {
-        console.log(this.openSidebar)
-    }
 }"
     :class="{
         'sidebar-open': openSidebar == true,
@@ -143,9 +140,8 @@
                             <x-mega-nav-link :menu="$menu" :open="request()->routeIs($menu['genericRouteKey'] . '.*')">
                             </x-mega-nav-link>
                         @else
-                            <x-nav-link href="{{ route($menu['routeName']) }}" :active="request()->routeIs($menu['routeName']) ||
+                            <x-nav-link href="{{ route($menu['routeName']) }}" :menu="$menu" :active="request()->routeIs($menu['routeName']) ||
                                 request()->routeIs($menu['genericRouteKey'] . '.*')">
-                                {{ $menu['label'] }}
                             </x-nav-link>
                         @endif
                     @endforeach
