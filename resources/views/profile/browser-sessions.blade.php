@@ -13,7 +13,7 @@
     </div>
 
     <div class="grid grid-cols-1 gap-0 mt-4">
-        <div class="w-full p-6 bg-white border-b border-gray-200 shadow-xl sm:px-8 sm:rounded-lg">
+        <div class="w-full p-6 bg-white border-b border-gray-200 shadow-xl sm:rounded-lg">
             <div class="mt-10 sm:mt-0">
                 @livewire('profile.logout-other-browser-sessions-form')
             </div>
