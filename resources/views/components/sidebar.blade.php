@@ -8,10 +8,10 @@
         'sidebar-open': openSidebar == true,
         'sidebar-close': openSidebar == false,
     }">
-    <div class="flex bg-primary">
-        <a href="{{ route('dashboard') }}" class="m-auto">
-            <div x-show="!openSidebar" class="h-16 py-2">
-                <x-svg.small-logo primaryColor="black" secondaryColor="white" />
+    <div class="flex items-center justify-center bg-primary">
+        <a href="{{ route('dashboard') }}">
+            <div x-show="!openSidebar" class="flex items-center h-16 text-white">
+                <x-svg.small-logo primaryColor="black" primaryColor="white" />
             </div>
             <div x-show="openSidebar">
                 <x-application-logo class="h-16 w-44" />
