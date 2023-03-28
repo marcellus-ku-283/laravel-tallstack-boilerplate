@@ -14,12 +14,11 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('role', 16)->default('client'); // admin, client
-            $table->string('first_name', 64);
-            $table->string('last_name', 64);
+            $table->string('name', 64);
             $table->string('email', 255)->unique()->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password')->nullable();
-            $table->string('status', 64);
+            $table->string('status', 64)->default('pending');
             $table->foreignId('current_team_id')->nullable();
             $table->string('profile_photo_path', 2048)->nullable();
             $table->unsignedBigInteger('created_by')->nullable();

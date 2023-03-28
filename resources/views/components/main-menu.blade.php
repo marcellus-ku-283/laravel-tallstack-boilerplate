@@ -1,1 +1,0 @@
-<x-sidebar></x-sidebar>

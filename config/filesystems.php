@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('FILESYSTEM_DISK', 'public'),
+    'default' => env('FILESYSTEM_DISK', 'local'),
 
     /*
     |--------------------------------------------------------------------------
@@ -44,14 +44,6 @@ return [
             'throw' => false,
         ],
 
-        'banner' => [
-            'driver' => 'local',
-            'root' => storage_path('app/banner'),
-            'url' => env('APP_URL').'/banner',
-            'visibility' => 'public',
-            'throw' => false,
-        ],
-
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),
@@ -78,8 +70,7 @@ return [
     */
 
     'links' => [
-        public_path('banner') => storage_path('app/banner'),
-        public_path('livewire-tmp') => storage_path('app/livewire-tmp'),
+        public_path('storage') => storage_path('app/public'),
     ],
 
 ];

@@ -22,7 +22,6 @@
 
 <body class="font-sans antialiased text-gray-900">
     {{ $slot }}
-    <x-banner />
 </body>
 
 </html>

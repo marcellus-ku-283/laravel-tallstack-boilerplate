@@ -1,10 +1,3 @@
-@props(['key', 'label'])
+@props(['disabled' => false])
 
-<div class="space-y-2">
-    <x-jet-label for="{{ $label }}">{{ str()->ucfirst($label) }}</x-jet-label>
-    <x-jet-input {{ $attributes }}/>
-</div>
-
-@error($key)
-    <span class="mt-2 text-sm font-medium text-red-400">{{ $message }}</span>
-@enderror
+<input {{ $disabled ? 'disabled' : '' }} {!! $attributes->merge(['class' => 'border-gray-300 focus:border-indigo-500 focus:ring-indigo-500 rounded-md shadow-sm']) !!}>
