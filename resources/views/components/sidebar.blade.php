@@ -145,6 +145,7 @@
                         @else
                             <x-nav-link href="{{ route($menu['routeName']) }}" :active="request()->routeIs($menu['routeName']) ||
                                 request()->routeIs($menu['genericRouteKey'] . '.*')">
+                                {{ $menu['label'] }}
                             </x-nav-link>
                         @endif
                     @endforeach

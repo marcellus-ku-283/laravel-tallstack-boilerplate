@@ -10,7 +10,7 @@
         x-cloak>
         <div class="absolute top-0 bottom-0 left-0 z-10 w-2/4 h-screen overflow-auto transition-all bg-white drop-shadow-2xl"
             :class="openMenu ? '-translate-x-0' : '-translate-x-full'">
-            <div class="flex bg-primary">
+            <div class="flex py-2 space-y-2 bg-primary">
                 <a href="{{ route('dashboard') }}" class="m-auto">
                     <div class="py-2 bg-primary">
                         <x-application-logo class="h-16 w-44 xs:h-4" />
@@ -19,20 +19,20 @@
             </div>
             <nav class="sticky top-0 w-full px-2 py-2 space-y-2 divide-y-2">
                 <div class="space-y-2">
-                    @if (!empty(config('sidebar-menu')))
-                        @foreach (config('sidebar-menu') as $menu)
-                            @if ($menu['hasChild'])
-                                <x-mega-nav-link :menu="$menu" :open="request()->routeIs($menu['genericRouteKey'] . '.*')">
-                                </x-mega-nav-link>
-                            @else
-                                <x-nav-link href="{{ route($menu['routeName']) }}"
-                                    :active="request()->routeIs($menu['routeName']) ||
-                                        request()->routeIs($menu['genericRouteKey'] . '.*')">
-                                </x-nav-link>
-                            @endif
-                        @endforeach
-                    @endif
-                </div>
+                @if (!empty(config('sidebar-menu')))
+                    @foreach (config('sidebar-menu') as $menu)
+                        @if ($menu['hasChild'])
+                            <x-mega-nav-link :menu="$menu" :open="request()->routeIs($menu['genericRouteKey'] . '.*')">
+                            </x-mega-nav-link>
+                        @else
+                            <x-nav-link href="{{ route($menu['routeName']) }}" :active="request()->routeIs($menu['routeName']) ||
+                                request()->routeIs($menu['genericRouteKey'] . '.*')">
+                                {{ $menu['label'] }}
+                            </x-nav-link>
+                        @endif
+                    @endforeach
+                @endif
+            </div>
                 <div class="py-2 space-y-2">
                     @php
                         $open = false;
