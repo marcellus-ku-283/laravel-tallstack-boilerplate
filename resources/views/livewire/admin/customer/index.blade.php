@@ -23,7 +23,7 @@
         </x-slot>
 
         <x-slot name="clearFilter">
-            <x-button wire:click="clearFilters">
+            <x-button wire:click="clearFilters" class="sm:text-xs">
                 Clear Filters
             </x-button>
         </x-slot>

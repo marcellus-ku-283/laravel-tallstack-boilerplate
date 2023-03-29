@@ -33,20 +33,20 @@
                             @endif
                         </div>
                         <div x-show="openFilterDrawer" class="flex flex-col justify-between py-4 space-y-4">
-                            <div class="grid gap-4 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3">
+                            <div class="grid gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2">
                                 <div class="w-full">
                                     {{ $filters ?? '' }}
                                 </div>
                             </div>
-                            <div class="flex items-start space-x-4 md:justify-start lg:justify-start sm:justify-between">
+                            <div class="grid gap-4 lg:grid-cols-4 md:grid-cols-4 sm:grid-cols-3">
                                 @if (empty($clearFilter))
                                     <button
-                                        class="inline-flex items-center px-4 py-2 text-xs font-semibold tracking-widest text-white uppercase transition duration-150 ease-in-out border border-transparent rounded-md bg-primary hover:bg-primary-700 focus:bg-primary-700 active:bg-primary-900 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
+                                        class="items-center w-auto px-4 py-2 text-xs font-semibold tracking-widest text-white uppercase transition duration-150 ease-in-out border border-transparent rounded-md sm:text-center bg-primary hover:bg-primary-700 focus:bg-primary-700 active:bg-primary-900 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
                                         type="button" x-on:click="openFilterDrawer = false">Close</button>
                                 @else
                                     {{ $clearFilter ?? '' }}
                                     <button
-                                        class="inline-flex items-center px-4 py-2 text-xs font-semibold tracking-widest text-white uppercase transition duration-150 ease-in-out border border-transparent rounded-md bg-primary hover:bg-primary-700 focus:bg-primary-700 active:bg-primary-900 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
+                                        class="items-center w-auto px-4 py-2 text-xs font-semibold tracking-widest text-white uppercase transition duration-150 ease-in-out border border-transparent rounded-md sm:text-center bg-primary hover:bg-primary-700 focus:bg-primary-700 active:bg-primary-900 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
                                         type="button" x-on:click="openFilterDrawer = false">Close</button>
                                 @endif
                             </div>
