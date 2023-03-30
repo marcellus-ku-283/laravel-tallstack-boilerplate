@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1721cc3cbccbf5c738a648e82ed57824",
+    "content-hash": "6926f05ed1a77089bea49a50abcece58",
     "packages": [
         {
             "name": "bacon/bacon-qr-code",
@@ -1285,16 +1285,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v10.4.1",
+            "version": "v10.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "7d15f7eef442633cff108f83d9fe43d8c3b8b76f"
+                "reference": "485f22333e8c1dff5bae0fe0421c1e2e139713de"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/7d15f7eef442633cff108f83d9fe43d8c3b8b76f",
-                "reference": "7d15f7eef442633cff108f83d9fe43d8c3b8b76f",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/485f22333e8c1dff5bae0fe0421c1e2e139713de",
+                "reference": "485f22333e8c1dff5bae0fe0421c1e2e139713de",
                 "shasum": ""
             },
             "require": {
@@ -1481,7 +1481,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2023-03-18T11:34:02+00:00"
+            "time": "2023-03-29T15:09:16+00:00"
         },
         {
             "name": "laravel/jetstream",
@@ -1679,16 +1679,16 @@
         },
         {
             "name": "laravel/telescope",
-            "version": "v4.14.0",
+            "version": "v4.14.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/telescope.git",
-                "reference": "fafad2e32883eb9dc03b646d0f82b2987e8af880"
+                "reference": "88ca4cbeefea563b605cf3fd9c10ff5a623864b1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/telescope/zipball/fafad2e32883eb9dc03b646d0f82b2987e8af880",
-                "reference": "fafad2e32883eb9dc03b646d0f82b2987e8af880",
+                "url": "https://api.github.com/repos/laravel/telescope/zipball/88ca4cbeefea563b605cf3fd9c10ff5a623864b1",
+                "reference": "88ca4cbeefea563b605cf3fd9c10ff5a623864b1",
                 "shasum": ""
             },
             "require": {
@@ -1700,7 +1700,9 @@
             "require-dev": {
                 "ext-gd": "*",
                 "guzzlehttp/guzzle": "^6.0|^7.0",
+                "laravel/octane": "^1.4",
                 "orchestra/testbench": "^6.0|^7.0|^8.0",
+                "phpstan/phpstan": "^1.10",
                 "phpunit/phpunit": "^9.0"
             },
             "type": "library",
@@ -1742,9 +1744,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel/telescope/issues",
-                "source": "https://github.com/laravel/telescope/tree/v4.14.0"
+                "source": "https://github.com/laravel/telescope/tree/v4.14.1"
             },
-            "time": "2023-02-21T15:49:06+00:00"
+            "time": "2023-03-17T18:13:19+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -6416,16 +6418,16 @@
         },
         {
             "name": "laravel/sail",
-            "version": "v1.21.2",
+            "version": "v1.21.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/sail.git",
-                "reference": "19d6fe167e2389b41fe1b4ee52293d1eaf8a43fc"
+                "reference": "3042ff8cf403817c340d5a7762b2d32900239f46"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/sail/zipball/19d6fe167e2389b41fe1b4ee52293d1eaf8a43fc",
-                "reference": "19d6fe167e2389b41fe1b4ee52293d1eaf8a43fc",
+                "url": "https://api.github.com/repos/laravel/sail/zipball/3042ff8cf403817c340d5a7762b2d32900239f46",
+                "reference": "3042ff8cf403817c340d5a7762b2d32900239f46",
                 "shasum": ""
             },
             "require": {
@@ -6477,7 +6479,7 @@
                 "issues": "https://github.com/laravel/sail/issues",
                 "source": "https://github.com/laravel/sail"
             },
-            "time": "2023-03-06T14:23:15+00:00"
+            "time": "2023-03-13T01:22:10+00:00"
         },
         {
             "name": "mockery/mockery",
@@ -8567,7 +8569,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": [],
-    "prefer-stable": true,
+    "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
         "php": "^8.1"
