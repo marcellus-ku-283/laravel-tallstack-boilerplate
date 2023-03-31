@@ -13,46 +13,46 @@
             x-transition:leave="transition ease-in duration-100" x-transition:leave-start="opacity-100"
             x-transition:leave-end="opacity-0" class="w-full max-w-sm bg-white rounded-lg shadow-lg pointer-events-auto">
             <div class="w-full max-w-sm overflow-hidden bg-white rounded-lg shadow-lg pointer-events-auto ">
-                <div class="p-4 bg-green-200"
+                <div class="p-4 bg-success-lighter"
                     :class="{
-                        'bg-blue-300': message.type == 'info',
-                        'bg-yellow-300': message.type == 'warning',
-                        'bg-red-300': message.type == 'error'
+                        'bg-info-lighter': message.type == 'info',
+                        'bg-warning-lighter': message.type == 'warning',
+                        'bg-danger-lighter': message.type == 'error'
                     }">
                     <div class="flex items-start">
                         <div class="flex-shrink-0">
                             <div x-show="message.type === 'success'">
-                                <x-svg.correct class="text-green-700" />
+                                <x-svg.correct class="text-success-darker" />
                             </div>
 
                             <div x-show="message.type === 'error'">
-                                <x-svg.error class="text-red-700" />
+                                <x-svg.error class="text-danger-darker" />
                             </div>
 
                             <div x-show="message.type === 'info'">
-                                <x-svg.info class="text-blue-700" />
+                                <x-svg.info class="text-info-darker" />
                             </div>
 
                             <div x-show="message.type === 'warning'">
-                                <x-svg.warn class="text-yellow-700" />
+                                <x-svg.warn class="text-warning-darker" />
                             </div>
                         </div>
 
                         <div class="flex-1 w-0 ml-3">
                             <p x-text="message.title" class="font-extrabold text-md"
                                 :class="{
-                                    'text-green-800': message.type == 'success',
-                                    'text-blue-800': message.type == 'info',
-                                    'text-yellow-800': message.type == 'warning',
-                                    'text-red-800': message.type == 'error'
+                                    'text-success-darker': message.type == 'success',
+                                    'text-info-darker': message.type == 'info',
+                                    'text-warning-darker': message.type == 'warning',
+                                    'text-danger-darker': message.type == 'error'
                                 }">
                             </p>
                             <p x-text="message.message" class="mt-1 text-sm font-semibold"
                                 :class="{
-                                    'text-green-600': message.type == 'success',
-                                    'text-blue-600': message.type == 'info',
-                                    'text-yellow-600': message.type == 'warning',
-                                    'text-red-600': message.type == 'error'
+                                    'text-success-darker': message.type == 'success',
+                                    'text-info-darker': message.type == 'info',
+                                    'text-warning-darker': message.type == 'warning',
+                                    'text-danger-darker': message.type == 'error'
                                 }">
                             </p>
                         </div>

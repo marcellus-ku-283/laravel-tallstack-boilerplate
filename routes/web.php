@@ -1,7 +1,7 @@
 <?php
 
+use App\Helpers\Authenticator;
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,6 +18,12 @@ Route::get('/', function () {
 });
 
 Route::get('/developer/login', App\Http\Livewire\Developer\Login::class)->name('developer.login');
+Route::get('/developer/dashboard', App\Http\Livewire\Developer\Dashboard::class)->name('developer.dashboard');
+Route::get('/developer/logout', function(){
+    $authenticator = new Authenticator(config('littlegatekeeper.username'), config('littlegatekeeper.password'), config('littlegatekeeper.sessionKey'), session());
+    $authenticator->logout();
+    return redirect()->route('developer.login');
+})->name('developer.logout');
 
 Route::middleware([
     'auth:sanctum',

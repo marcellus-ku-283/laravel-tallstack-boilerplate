@@ -1,9 +1,5 @@
     <x-authentication-card>
         <x-slot name="logo">
-            <a href="{{ route('developer.login') }}">
-                <x-application-logo :color="'#D4AD60'" class="h-40 sm:h-20"></x-application-logo>
-                <span class="font-semibold text-gray-600">For Developers</span>
-            </a>
         </x-slot>
 
         <x-validation-errors class="mb-4" />

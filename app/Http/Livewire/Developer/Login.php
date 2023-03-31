@@ -22,6 +22,7 @@ class Login extends Component
 
     public function save()
     {
+        return redirect()->back();
         $validated = $this->validate();
     
         $authenticator = new Authenticator(config('littlegatekeeper.username'), config('littlegatekeeper.password'), config('littlegatekeeper.sessionKey'), session());
@@ -32,6 +33,6 @@ class Login extends Component
         }
 
         $this->notify('Logged-in successful.');
-        return redirect()->to('/telescope');
+        return redirect()->to(route('developer.dashboard'));
     }
 }

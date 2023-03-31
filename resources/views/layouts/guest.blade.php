@@ -4,6 +4,12 @@
             <div class="flex items-center justify-center h-screen">
                 <a href="{{ route('login') }}">
                     <x-application-logo class="h-40 sm:h-20"></x-application-logo>
+                    @if(
+                        request()->routeIs('developer.*') == true ||
+                        request()->routeIs('telescope.*') == true ||
+                        request()->routeIs('log-viewer.*') == true)
+                        <span class="font-semibold text-white">For Developers</span>    
+                    @endif  
                 </a>
             </div>
         </div>
