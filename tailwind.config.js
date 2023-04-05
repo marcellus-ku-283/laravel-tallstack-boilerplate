@@ -1,34 +1,35 @@
-const defaultTheme = require('tailwindcss/defaultTheme');
-const colors = require('tailwindcss/colors')
+const defaultTheme = require("tailwindcss/defaultTheme");
+const colors = require("tailwindcss/colors");
 
 module.exports = {
     content: [
-        './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
-        './vendor/laravel/jetstream/**/*.blade.php',
-        './storage/framework/views/*.php',
-        './resources/views/**/*.blade.php',
+        "./vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php",
+        "./vendor/laravel/jetstream/**/*.blade.php",
+        "./storage/framework/views/*.php",
+        "./resources/views/**/*.blade.php",
+        "./node_modules/tw-elements/dist/js/**/*.js",
     ],
     theme: {
         fontFamily: {
-            sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+            sans: ["Figtree", ...defaultTheme.fontFamily.sans],
         },
         extend: {
             colors: {
-                primary: 'var(--light)',
-                dark: 'var(--dark)',
-                darker: 'var(--darker)',
+                primary: "var(--light)",
+                dark: "var(--dark)",
+                darker: "var(--darker)",
                 primary: {
-                    DEFAULT: '#eb4432',
-                    '50': '#fef3f2',
-                    '100': '#fee5e2',
-                    '200': '#fdd0cb',
-                    '300': '#fbaea6',
-                    '400': '#f68073',
-                    '500': '#eb4432',
-                    '600': '#da3928',
-                    '700': '#b72d1e',
-                    '800': '#97291d',
-                    '900': '#7e271e',
+                    DEFAULT: "#eb4432",
+                    50: "#fef3f2",
+                    100: "#fee5e2",
+                    200: "#fdd0cb",
+                    300: "#fbaea6",
+                    400: "#f68073",
+                    500: "#eb4432",
+                    600: "#da3928",
+                    700: "#b72d1e",
+                    800: "#97291d",
+                    900: "#7e271e",
                 },
                 success: {
                     DEFAULT: colors.green[600],
@@ -69,5 +70,9 @@ module.exports = {
             },
         },
     },
-    plugins: [require('@tailwindcss/forms'), require('@tailwindcss/typography')],
-}
+    plugins: [
+        require("@tailwindcss/forms"),
+        require("@tailwindcss/typography"),
+        require("tw-elements/dist/plugin"),
+    ],
+};

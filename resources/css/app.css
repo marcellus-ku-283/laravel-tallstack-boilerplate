@@ -22,3 +22,20 @@
 .sidebar-close {
     @apply w-16
 }
+
+/* Input CSS */
+
+.form-group{
+    @apply flex flex-col space-y-1
+}
+.form-group > input{
+    @apply placeholder-opacity-0 h-10 w-full rounded-md border-0 bg-transparent py-[0.32rem] px-3 leading-[1.6] outline-none bg-blue-100 ring-0 focus:ring-0
+}
+
+.form-group > label {
+    @apply pointer-events-none mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[1.6] text-neutral-500 
+}
+
+.form-group > span {
+    @apply text-sm text-red-600;
+}
