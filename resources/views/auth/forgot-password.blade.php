@@ -1,3 +1,4 @@
+<x-guest-layout>
     <section class="w-full h-screen gradient-form bg-neutral-200">
         <div class="container h-screen m-auto">
             <div class="flex items-center justify-center h-full g-6 text-neutral-800">
@@ -7,7 +8,9 @@
                             <div class="px-4 md:px-0 lg:w-6/12">
                                 <div class="md:mx-6 md:p-12">
                                     <div class="text-center">
-                                        <x-application-logo class="w-48 mx-auto" color="#eb4432" />
+                                        <a href="{{ route('login') }}">
+                                            <x-application-logo class="w-48 mx-auto" color="#eb4432" />
+                                        </a>
                                         <h4 class="pb-1 mt-1 mb-12 text-xl font-semibold">
                                             Let's build something amazing.
                                         </h4>
@@ -21,6 +24,25 @@
                                             {{ session('status') }}
                                         </div>
                                     @endif
+
+                                    <form method="POST" action="{{ route('password.email') }}">
+                                        @csrf
+
+                                        <div class="form-group">
+                                            <label for="email">Email Address</label>
+                                            <input type="text" name="email" id="email"
+                                                value="{{ old('email') }}" />
+                                            @error('email')
+                                                <span>{{ $message }}</span>
+                                            @enderror
+                                        </div>
+
+                                        <div class="flex items-center justify-end mt-4">
+                                            <x-button>
+                                                {{ __('Email Password Reset Link') }}
+                                            </x-button>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                             <div class="flex items-center rounded-b-lg lg:w-6/12 lg:rounded-r-lg lg:rounded-bl-none bg-gradient-to-r from-orange-300 via-red-500 to-purple-400"
@@ -43,36 +65,4 @@
             </div>
         </div>
     </section>
-{{-- <x-guest-layout>
-    <x-authentication-card>
-        <x-slot name="logo">
-        </x-slot>
-
-        <div class="mb-4 text-sm text-gray-600">
-            {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
-        </div>
-
-        @if (session('status'))
-            <div class="mb-4 text-sm font-medium text-green-600">
-                {{ session('status') }}
-            </div>
-        @endif
-
-        <x-validation-errors class="mb-4" />
-
-        <form method="POST" action="{{ route('password.email') }}">
-            @csrf
-
-            <div class="block">
-                <x-label for="email" value="{{ __('Email') }}" />
-                <x-input id="email" class="block w-full mt-1" type="email" name="email" :value="old('email')" autofocus autocomplete="username" />
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                <x-button>
-                    {{ __('Email Password Reset Link') }}
-                </x-button>
-            </div>
-        </form>
-    </x-authentication-card>
-</x-guest-layout> --}}
+</x-guest-layout>
